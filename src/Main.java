@@ -1,7 +1,9 @@
+import games.Game;
 import games.Player;
 import games.Team;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,15 +15,22 @@ public class Main {
 
         Team t1 = new Team("PSV", "Eindhoven");
         t1.addPlayer(p1);
-        t1.addPlayer(p2);
 
-        System.out.println(t1);
+        Team t2 = new Team("Ajax", "Amsterdam");
+        t2.addPlayer(p2);
 
-        System.exit(0);
+        Game g1 = new Game(t2, t1, LocalDateTime.now());
+        g1.addGoal(true);
+        g1.addGoal(false);
+        g1.addGoal(true);
+        g1.addGoal(true);
+        System.out.println(g1);
+
+        System.exit(0);     // stop executing program
 
         ArrayList<String> colours = new ArrayList<>();
         colours.add("red");
-        colours.add("blue");;
+        colours.add("blue");
 
         colours.add("yellow");
         System.out.println(colours);
